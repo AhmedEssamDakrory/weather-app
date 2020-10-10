@@ -1,8 +1,8 @@
 const express = require('express')
 const path = require('path')
 const hbs = require('hbs')
-
 const app = express()
+const port = process.env.PORT || 3000
 
 const viewsDir = path.join(__dirname, '../templates/views')
 const partialsDir = path.join(__dirname, '../templates/partials')
@@ -17,6 +17,6 @@ app.get('', (req, res) => {
     res.render('index')
 })
 
-app.listen(3000, () => {
-    console.log("server listening on port 3000")
+app.listen(port, () => {
+    console.log("server listening on port " + port)
 })
